@@ -13,7 +13,7 @@ app.use(express.bodyParser());
 //default redirect url
 app.get("/", function(req, res) {
     console.log("inside app redirection");
-    res.sendfile(__dirname+"/index.html");
+    res.sendfile(__dirname+"/client/index.html");
 	console.log("after app redirection");
 });
 
@@ -49,7 +49,7 @@ app.configure(function() {
     /**
      * configurations of the static directories
      */
-    app.use(express.static(__dirname + '/test'));
+    app.use(express.static(__dirname + '/client'));
     app.use(express.errorHandler( {
         dumpExceptions : true,
         showStack : true
